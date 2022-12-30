@@ -1,17 +1,17 @@
 ---
 home: true
 icon: home
-title: Project home
+title: 前端面试宝典
 heroImage: /logo.svg
-heroText: Project name
-tagline: You can place the description of the project here.
+heroText: 前端面试宝典
+tagline: 前端面试宝典
 actions:
-  - text: How to Use 💡
-    link: /demo/
+  - text: 开始背诵 💡
+    link: /docs/
     type: primary
 
-  - text: Docs
-    link: /guide/
+  - text: 仓库地址
+    link: https://github.com/bzirs/webinterview
 
 features:
   - title: Markdown Enhance
@@ -100,11 +100,5 @@ features:
     link: https://vuepress-theme-hope.github.io/v2/guide/feature/
 
 copyright: false
-footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
+footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">Hope</a> . MIT Licensed, Copyright © 2022 BzIrs and his good friends
 ---
-
-This is an example of a project homepage. You can place your main content here.
-
-To use this layout, you need to set `home: true` in the page front matter.
-
-For related descriptions of configuration items, please see [Project HomePage Layout Config](https://vuepress-theme-hope.github.io/v2/guide/layout/home/).

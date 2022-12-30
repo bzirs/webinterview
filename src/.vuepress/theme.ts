@@ -1,68 +1,52 @@
-import { hopeTheme } from "vuepress-theme-hope";
-import { enNavbar, zhNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar } from "./sidebar/index.js";
+import { hopeTheme } from 'vuepress-theme-hope'
+import { zhNavbar } from './navbar/index.js'
+import { zhSidebar } from './sidebar/index.js'
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: 'https://bzirs.github.io/webinterview',
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mrhope.site",
+    name: 'BzIrs',
+    url: 'https://blog.iuiun.com'
   },
 
-  iconAssets: "iconfont",
+  iconAssets: 'iconfont',
 
-  logo: "/logo.svg",
+  logo: '/logo.svg',
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: 'https://github.com/bzirs/webinterview',
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: '',
 
-  pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
+  pageInfo: ['Author', 'Original', 'Date', 'Category', 'Tag', 'ReadingTime'],
 
   locales: {
-    "/": {
-      // navbar
-      navbar: enNavbar,
-
-      // sidebar
-      sidebar: enSidebar,
-
-      footer: "Default footer",
-
-      displayFooter: true,
-
-      metaLocales: {
-        editLink: "Edit this page on GitHub",
-      },
-    },
-
     /**
      * Chinese locale config
      */
-    "/zh/": {
+    '/': {
       // navbar
       navbar: zhNavbar,
 
       // sidebar
-      sidebar: zhSidebar,
+      sidebar: "structure",
 
-      footer: "默认页脚",
+      // footer: '默认页脚',
 
       displayFooter: true,
 
       // page meta
       metaLocales: {
-        editLink: "在 GitHub 上编辑此页",
-      },
-    },
+        editLink: '在 GitHub 上编辑此页'
+      }
+    }
   },
 
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
-    },
+      '/demo/encrypt.html': ['1234'],
+      '/zh/demo/encrypt.html': ['1234']
+    }
   },
 
   plugins: {
@@ -88,8 +72,8 @@ export default hopeTheme({
       /**
        * Using Waline
        */
-      provider: "Waline",
-      serverURL: "https://vuepress-theme-hope-comment.vercel.app",
+      provider: 'Waline',
+      serverURL: 'https://vuepress-theme-hope-comment.vercel.app'
     },
 
     // Disable features you don’t want here
@@ -111,30 +95,30 @@ export default hopeTheme({
       mark: true,
       mermaid: true,
       playground: {
-        presets: ["ts", "vue"],
+        presets: ['ts', 'vue']
       },
       presentation: {
-        plugins: ["highlight", "math", "search", "notes", "zoom"],
+        plugins: ['highlight', 'math', 'search', 'notes', 'zoom']
       },
       stylize: [
         {
-          matcher: "Recommended",
+          matcher: 'Recommended',
           replacer: ({ tag }) => {
-            if (tag === "em")
+            if (tag === 'em')
               return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
+                tag: 'Badge',
+                attrs: { type: 'tip' },
+                content: 'Recommended'
+              }
+          }
+        }
       ],
       sub: true,
       sup: true,
       tabs: true,
       vPre: true,
-      vuePlayground: true,
-    },
+      vuePlayground: true
+    }
 
     // uncomment these if you want a pwa
     // pwa: {
@@ -198,5 +182,5 @@ export default hopeTheme({
     //     ],
     //   },
     // },
-  },
-});
+  }
+})
