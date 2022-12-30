@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://vuepress-theme-hope-docs-demo.netlify.app/webinterview/sitemap.xml
+Sitemap: https://bzirs.github.io/webinterview/webinterview/sitemap.xml
