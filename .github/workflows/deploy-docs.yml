@@ -3,7 +3,7 @@ name: 部署文档
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: '30 1 * * *'
+    - cron: '30 17 * * *'
   # push:
   # branches:
   # 确保这是你正在使用的分支名称
