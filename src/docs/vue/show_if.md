@@ -3,8 +3,9 @@
 ![](https://static.vue-js.com/d21c3c50-3acb-11eb-85f6-6fac77c0c9b3.png)
 
 ## 逐字稿（王功道）
-1.底层原理不同 
-`v-if`是根据条件动态的添加`dom`节点。而`v-show `是根据条件切换`dom`元素的`css`的`display`样式。
+
+1.底层原理不同
+`v-if`是根据条件动态的添加`dom`节点。而`v-show`是根据条件切换`dom`元素的`css`的`display`样式。
 
 2.特性不同
 `v-if`根据条件切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件。（简单说，v-if是有惰性的，条件为false时，不会渲染dom元素）所以，v-if的初始渲染成本低，但频繁切换时，会不断地添加或删除dom元素节点，所以它的切换成本很高。
@@ -16,7 +17,7 @@
 
 ## 一、v-show与v-if的共同点
 
-我们都知道在 `vue` 中 `v-show ` 与 `v-if` 的作用效果是相同的(不含v-else)，都能控制元素在页面是否显示
+我们都知道在 `vue` 中 `v-show` 与 `v-if` 的作用效果是相同的(不含v-else)，都能控制元素在页面是否显示
 
 在用法上也是相同的
 
@@ -27,7 +28,6 @@
 
 - 当表达式为`true`的时候，都会占据页面的位置
 - 当表达式都为`false`时，都不会占据页面位置
-
 
 ## 二、v-show与v-if的区别
 
@@ -50,6 +50,7 @@
 ## 三、v-show与v-if原理分析
 
 具体解析流程这里不展开讲，大致流程如下
+
 - 将模板`template`转为`ast`结构的`JS`对象
 - 用`ast`得到的`JS`对象拼装`render`和`staticRenderFns`函数
 - `render`和`staticRenderFns`函数被调用后生成虚拟`VNODE`节点，该节点包含创建`DOM`节点所需信息
@@ -127,15 +128,14 @@ export const transformIf = createStructuralDirectiveTransform(
 
 `v-if` 与 `v-show` 都能控制`dom`元素在页面的显示
 
-`v-if` 相比 `v-show` 开销更大的（直接操作`dom`节点增加与删除） 
+`v-if` 相比 `v-show` 开销更大的（直接操作`dom`节点增加与删除）
 
 如果需要非常频繁地切换，则使用 v-show 较好
 
 如果在运行时条件很少改变，则使用 v-if 较好
 
-
 ## 参考文献
 
-- https://www.jianshu.com/p/7af8554d8f08
-- https://juejin.cn/post/6897948855904501768
-- https://vue3js/docs/zh
+- <https://www.jianshu.com/p/7af8554d8f08>
+- <https://juejin.cn/post/6897948855904501768>
+- <https://vue3js/docs/zh>
