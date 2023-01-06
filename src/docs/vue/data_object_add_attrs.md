@@ -14,6 +14,18 @@
 2. 先创建一个新对象，通过Object.assign()，将原响应式对象和新对象合并，混入新属性。这种方法适用于添加大量的新属性。
 3. 还有就是通过$forceUpdate强制更新，但不推荐使用。
 
+## 逐字稿
+
+### 发生什么
+
+1. 动态给vue的data添加一个新属性会造成：“数据更新，页面不更新”的现象。但这只是Vue2存在的问题。原因是vue2用的是Object.defineProperty()实现数据响应式的，而Vue3的响应式原理是porxy，劫持的是整个对象，所以不存在此问题。
+2. Object.defineProperty()的工作原理是将遍历对象内的property转为getter/setter，劫持的不是对象本身。所以当我们给对象添加新属性时，无法触发事件属性的拦截。
+
+### 解决
+
+1. 通过Vue.set()构造函数方法给响应式对象添加一个property。这种方法适用于添加少量的新属性。
+2. 先创建一个新对象，通过Object.assign()，将原响应式对象和新对象合并，混入新属性。这种方法适用于添加大量的新属性。
+3. 还有就是通过$forceUpdate强制更新，但不推荐使用。
 
 ## 一、直接添加属性的问题
 
@@ -35,8 +47,8 @@
 ```js
 const app = new Vue({
     el:"#app",
-   	data:()=>{
-       	item:{
+    data:()=>{
+        item:{
             oldProperty:"旧属性"
         }
     },
@@ -50,7 +62,6 @@ const app = new Vue({
 ```
 
 点击按钮，发现结果不及预期，数据虽然更新了（`console`打印出了新属性），但页面并没有更新
-
 
 ## 二、原理分析
 
@@ -102,8 +113,6 @@ obj.bar  = '新属性'
 - Object.assign()
 - $forcecUpdated()
 
-
-
 ### Vue.set()
 
 Vue.set( target, propertyName/index, value )
@@ -116,7 +125,7 @@ Vue.set( target, propertyName/index, value )
 
 返回值：设置的值
 
-通过`Vue.set`向响应式对象中添加一个`property`，并确保这个新 `property `同样是响应式的，且触发视图更新
+通过`Vue.set`向响应式对象中添加一个`property`，并确保这个新 `property`同样是响应式的，且触发视图更新
 
 关于`Vue.set`源码（省略了很多与本节不相关的代码）
 
@@ -154,8 +163,6 @@ function defineReactive(obj, key, val) {
 }
 ```
 
-
-
 ### Object.assign()
 
 直接使用`Object.assign()`添加到对象的新属性不会触发更新
@@ -166,17 +173,13 @@ function defineReactive(obj, key, val) {
 this.someObject = Object.assign({},this.someObject,{newProperty1:1,newProperty2:2 ...})
 ```
 
-
-
 ### $forceUpdate
 
-如果你发现你自己需要在 `Vue `中做一次强制更新，99.9% 的情况，是你在某个地方做错了事
+如果你发现你自己需要在 `Vue`中做一次强制更新，99.9% 的情况，是你在某个地方做错了事
 
-`$forceUpdate`迫使` Vue` 实例重新渲染
+`$forceUpdate`迫使`Vue` 实例重新渲染
 
 PS：仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。
-
-
 
 ### 小结
 
@@ -186,11 +189,9 @@ PS：仅仅影响实例本身和插入插槽内容的子组件，而不是所有
 
 - 如果你实在不知道怎么操作时，可采取`$forceUpdate()`进行强制刷新 (不建议)
   
-
 PS：`vue3`是用过`proxy`实现数据响应式的，直接动态添加新属性仍可以实现数据响应式
-
 
 ## 参考文献
 
-- https://cn.vuejs.org/v2/api/#Vue-set
-- https://vue3js.cn/docs/zh
+- <https://cn.vuejs.org/v2/api/#Vue-set>
+- <https://vue3js.cn/docs/zh>
