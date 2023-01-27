@@ -91,3 +91,5 @@ Object.prototype.toString.call(true); '[object Boolean]'
 ```
 
 Object.prototype.toString 的原理是当调用的时候, 就取值内部的 [[Class]] 属性值, 然后拼接成 '[object ' + [[Class]] + ']' 这样的字符串并返回. 然后我们使用 call 方法来获取任何值的数据类型.
+
+(@任伟)
