@@ -1,4 +1,8 @@
+<<<<<<< HEAD:src/docs/vue/Vue 常用的指令都有哪些？.md
 # Vue 常用的指令都有哪些？
+=======
+# 11. Vue 常用的指令都有哪些？并且说明其作用
+>>>>>>> d5fad8df252a1d4e43e1337aa8ad41d698de180e:src/docs/vue/Vue常用的指令都有哪些.md
 
 ## 逐字稿
 
