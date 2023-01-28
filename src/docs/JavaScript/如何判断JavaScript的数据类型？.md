@@ -1,4 +1,4 @@
-# 如何判断 JavaScript 的数据类型？
+# 02. 如何判断 JavaScript 的数据类型？
 
 ## Typeof
 
