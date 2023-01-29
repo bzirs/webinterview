@@ -1,4 +1,4 @@
-# 如何理解 JavaScript 的异步
+# 04. 如何理解 JavaScript 的异步
 
 ## 逐字稿
 
