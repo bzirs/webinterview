@@ -1,4 +1,4 @@
-# 01.  Vue的生命周期
+# 13. Vue的生命周期
 
 ## 逐字稿
 
@@ -19,6 +19,5 @@ keep-alive :用于保留组件状态或避免重新渲染
 activated：只有keep-alive组件激活时调用
 
 deactivated：只有keep-alive组件停用时调用
-
 
 (@王功道)
