@@ -13,4 +13,6 @@
    - `v-show`内的表达式的布尔值发生改变时，不会触发`vue`组件的生命周期。因为`v-show`只是切换 dom 元素的 css 样式,没改变数据，它已经完成了初始化和挂载阶段内的四个钩子。
    - `v-if`表达式内由`false`变为`true`的时候，触发组件的`beforeCreate`、`create`、`beforeMount`、`mounted`钩子，由`true`变为`false`的时候触发组件的`beforeDestory`、`destoryed`钩子.
 
+[原面试题](http://fanyouf.gitee.io/interview/vue/07.html#%E7%AE%80%E7%89%88)
+
 (@王功道)

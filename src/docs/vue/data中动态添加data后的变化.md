@@ -13,4 +13,6 @@
 2. 先创建一个新对象，通过Object.assign()，将原响应式对象和新对象合并，混入新属性。这种方法适用于添加大量的新属性。
 3. 还有就是通过$forceUpdate强制更新，但不推荐使用。
 
+[原面试题](http://fanyouf.gitee.io/interview/vue/21.html#%E7%AE%80%E7%89%88)
+
 (@王功道)
