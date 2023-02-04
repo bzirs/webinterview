@@ -20,4 +20,5 @@ activated：只有keep-alive组件激活时调用
 
 deactivated：只有keep-alive组件停用时调用
 
+keep-alive之后beforeDestroy不会执行，会执行的是deactivated
 (@王功道)
